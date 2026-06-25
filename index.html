@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dawid Lempart - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+   <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">DL</div>
+            
+            <!-- Hamburger (Otwieranie) -->
+            <div class="hamburger" id="hamburger-btn">&#9776;</div>
+
+            <!-- Menu Boczne -->
+            <div class="nav-menu" id="nav-menu">
+                <!-- NOWOŚĆ: Przycisk Zamknij (X) wewnątrz menu -->
+                <div class="close-btn" onclick="closeMenu()">&times;</div>
+
+                <ul class="nav-links">
+                    <li><a href="#about" data-i18n="nav_about" onclick="closeMenu()">About me</a></li>
+                    <li><a href="#skills" data-i18n="nav_skills" onclick="closeMenu()">Skills</a></li>
+                    <li><a href="#projects" data-i18n="nav_projects" onclick="closeMenu()">Projects</a></li>
+                    <li><a href="#contact" data-i18n="nav_contact" onclick="closeMenu()">Contact</a></li>
+                </ul>
+                <div class="settings">
+                    <select id="language-selector">
+                        <option value="en">EN</option>
+                        <option value="pl">PL</option>
+                        <option value="de">DE</option>
+                    </select>
+                    <button id="theme-toggle" aria-label="Toggle theme">🌓</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section id="about" class="section">
+            <h2 data-i18n="about_title">About me</h2>
+            <div class="content-wrapper">
+                <p data-i18n="about_text">
+                    I am a second-year Computer Science student with a background as an Electronics Technician. 
+                    Unlike many peers who focus on high-level web development, I am passionate about what happens 'under the hood.' 
+                    My focus is on C, C++, and Operating Systems because they offer total control over hardware and performance.
+                    <br/><br/>
+                    I approach programming with an analytical mindset—I break down complex errors into smaller, solvable problems. 
+                    Currently, I am deepening my knowledge of Linux environments and network protocols. My career goal is to combine 
+                    low-level programming with cybersecurity to build high-performance systems that are resilient to exploits and crashes.
+                </p>
+            </div>
+        </section>
+
+       
+        <section id="skills" class="section">
+            <h2 data-i18n="skills_title">My Skills</h2>
+            
+            <div class="skills-grid">
+              
+                <div class="skill-category">
+                    <h3 data-i18n="cat_programming">Programming</h3>
+                    <div class="icons programming-icons"> 
+                        <img src="images/c.png" alt="C" title="C Language">
+                        <img src="images/cpp.png" alt="C++" title="C++">
+                        <img src="images/java.png" alt="Java" title="Java">
+                        <img src="images/python.png" alt="Python" title="Python">
+                    </div>
+                </div>
+    
+                
+                <div class="skill-category">
+                    <h3 data-i18n="cat_os">Operating Systems</h3>
+                    <div class="icons">
+                        <img src="images/linux.png" alt="Linux" title="Linux">
+                        <img src="images/windows.png" alt="Windows" title="Windows">
+                    </div>
+                </div>
+    
+               
+                <div class="skill-category">
+                    <h3 data-i18n="cat_vcs">Version Control</h3>
+                    <div class="icons">
+                        <img src="images/github.png" alt="GitHub" title="GitHub">
+                        <img src="images/gitlab.png" alt="GitLab" title="GitLab">
+                        <img src="images/sql.jpg" alt="SQL" title="SQL"> 
+                    </div>
+                </div>
+    
+               
+                <div class="skill-category">
+                    <h3 data-i18n="cat_languages">Languages</h3>
+                    <ul class="text-list">
+                        <li data-i18n="lang_en">English B2</li>
+                        <li data-i18n="lang_de">German B1</li>
+                        <li data-i18n="lang_pl">Polish (Native)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <h2 data-i18n="projects_title">My Projects</h2>
+            
+            <div class="projects-grid">
+                
+                <!-- PROJEKT 1: C++ Black Box -->
+                <div class="project-card">
+                    <!-- ZMIANA: Usunęliśmy ikonę <i>, wstawiliśmy <img> -->
+                    <!-- Styl inline dodany, żeby tło pasowało do czarnego terminala -->
+                    <div class="card-header" style="background-color: #181818; padding: 0;">
+                        <img src="images/blackbox.png" 
+                            alt="Black Box Terminal Game" 
+                            style="width: 100%; height: 100%; object-fit: contain;">
+                    </div>
+                        
+                    <div class="card-body">
+                        <h3 data-i18n="proj_c_title">Cross-Platform Black Box Game</h3>
+                        <p data-i18n="proj_c_desc">
+                            A logic puzzle game running in the terminal. Implemented custom 'raw mode' handling to bypass standard buffering, 
+                            enabling real-time interaction on both Linux and Windows kernels.
+                        </p>
+                        <div class="tags">
+                            <span>C++</span>
+                            <span>Linux API</span>
+                            <span>Algorithms</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://github.com/Lempi-PL/BlackBox" target="_blank" class="btn-small" data-i18n="btn_code">Check code</a>
+                    </div>
+                </div>
+
+                <!-- PROJEKT 2: Java Parking -->
+                <div class="project-card">
+                    
+                    <div class="card-header" style="background-color: #151515; padding: 0;">
+                        <img src="images/java_parking.png" 
+                            alt="Java Unit Test Screenshot" 
+                            style="width: 100%; height: 100%; object-fit: contain;">
+                    </div>
+                    
+                    <div class="card-body">
+                        <h3 data-i18n="proj_java_title">Smart Parking REST API</h3>
+                        <p data-i18n="proj_java_desc">
+                            Backend system for parking management. Features include dynamic pricing algorithms, VIP/Blacklist access control, 
+                            and emergency protocols, backed by an H2 database and Spring Boot.                       
+                        </p>
+                        <div class="tags">
+                            <span>Java 21</span>
+                            <span>Spring Boot</span>
+                            <span>JUnit 5</span>
+                            <span>H2 DB</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://github.com/Lempi-PL/parking-spot" target="_blank" class="btn-small" data-i18n="btn_code">Check code</a>
+                    </div>
+                </div>
+
+               <!-- PROJEKT 3: MirrorC -->
+                <div class="project-card">
+                    <div class="card-header" style="background-color: #151515; padding: 0;">
+                       <img src="images/mirror.png" 
+                            alt="MirrorC copy result" 
+                            style="width: 100%; height: 100%; object-fit: contain;">
+                    </div>
+                    <div class="card-body">
+                        <h3 data-i18n="proj_mirrorc_title">MirrorC - Multi-Threaded File Mover</h3>
+                        <p data-i18n="proj_mirrorc_desc">
+                            A high-performance, cross-platform file traversal and copying tool written in C23. Utilizes a Thread Pool architecture and Zero-Copy I/O to maximize hardware throughput.
+                        </p>
+                        <div class="tags">
+                            <span>C23</span>
+                            <span>Multi-Threading</span>
+                            <span>Zero-Copy I/O</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://github.com/Lempi-PL/MirrorC" target="_blank" class="btn-small" data-i18n="btn_code">Check code</a>
+                    </div>
+                </div>
+
+                <!-- PROJEKT 4: LLM-Auditor -->
+                <div class="project-card">
+                    <div class="card-header" style="background-color: #151515; padding: 0;">
+                        <img src="images/scanner.png" 
+                            alt="Scan result" 
+                            style="width: 100%; height: 100%; object-fit: contain;">
+                    </div>
+                    <div class="card-body">
+                        <h3 data-i18n="proj_llm_title">Aegis-LLM DAST Scanner</h3>
+                        <p data-i18n="proj_llm_desc">
+                            An advanced, asynchronous DAST scanner for auditing LLM-based applications. Built to meet the rigorous requirements of the NIS2 Directive and OWASP Top 10 for LLMs 2026.
+                        </p>
+                        <div class="tags">
+                            <span>Python</span>
+                            <span>Cybersecurity</span>
+                            <span>DAST</span>
+                            <span>NIS2 / OWASP</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://github.com/Lempi-PL/LLM-Auditor" target="_blank" class="btn-small" data-i18n="btn_code">Check code</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <h2 data-i18n="contact_title">Feedback & Contact</h2>
+            <form action="https://formspree.io/f/mwvdlzpb" method="POST" class="contact-form">
+                <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+                <label>
+                    <span data-i18n="form_email">Your Email:</span>
+                    <input type="email" name="email" required>
+                </label>
+                <label>
+                    <span data-i18n="form_message">Message / Feedback:</span>
+                    <textarea name="message" required></textarea>
+                </label>
+                <button type="submit" class="btn-submit" data-i18n="form_send">Send</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Dawid Lempart</p>
+        <div class="socials">
+            <a href="https://github.com/Lempi-PL" target="_blank">GitHub</a>
+            <a href="mailto:lempart.dawid.it@gmail.com">Email</a>
+            <a href="https://www.linkedin.com/in/dawid-lempart-7a046434b" target="_blank">LinkedIn</a>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

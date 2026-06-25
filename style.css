@@ -1,0 +1,483 @@
+/* Zmienne - Paleta Kolorów */
+:root {
+    --bg-color: #f4f4f9;
+    --text-color: #333333;
+    --card-bg: #ffffff;
+    --accent-color: #0056b3;
+    --nav-bg: #ffffff;
+    --shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+body.dark-mode {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --card-bg: #1e1e1e;
+    --accent-color: #4da8da;
+    --nav-bg: #1e1e1e;
+    --shadow: 0 4px 6px rgba(0,0,0,0.5);
+}
+
+/* Reset */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 1.125rem; 
+}
+
+/* --- NAWIGACJA --- */
+.navbar {
+    background-color: var(--nav-bg);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+.nav-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.hamburger {
+    display: none;
+    font-size: 1.8rem; /* Nieco większy hamburger */
+    cursor: pointer;
+    color: var(--text-color);
+    line-height: 1; /* Żeby nie był za wysoki */
+}
+
+/* Grupa menu na Desktopie */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    
+    /* FIX NA KOMPUTER: Rozciągnij menu, żeby móc wyśrodkować linki */
+    flex: 1; 
+    justify-content: flex-end; /* Ustawienia trzymaj po prawej */
+    margin-left: 20px;
+}
+
+
+
+.settings { display: flex; gap: 15px; align-items: center; }
+
+#language-selector, 
+#theme-toggle {
+    width: 60px;
+    height: 40px;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+#language-selector { border: 1px solid #ccc; }
+
+#theme-toggle {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-links { 
+    list-style: none; 
+    display: flex; 
+    gap: 20px; 
+    
+    /* FIX NA KOMPUTER: Wyśrodkuj linki w dostępnej przestrzeni */
+    margin: 0 auto; 
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    transition: color 0.2s;
+    font-size: 1.1rem; 
+}
+
+.nav-links a:hover { color: var(--accent-color); }
+
+.close-btn { display: none; }
+
+/* --- SEKCJE --- */
+.section {
+    padding: 4rem 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+    scroll-margin-top: 80px;
+}
+
+h2 {
+    color: var(--accent-color);
+    border-bottom: 2px solid var(--accent-color);
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    font-size: 2.2rem; 
+}
+
+h3 {
+    font-size: 1.5rem; 
+    margin-bottom: 1rem;
+}
+
+/* --- SKILLS GRID (UKŁAD KAFELKÓW) --- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    width: 100%;
+}
+
+/* Pojedynczy kafelek kategorii */
+.skill-category {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    
+    /* Centrowanie wszystkiego w pionie (Języki, Ikony) */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Rozciąga treść góra/dół */
+    min-height: 280px; /* Stała minimalna wysokość kafelków, żeby były równe */
+}
+.skill-category h3 {
+    text-align: left; /* Tytuł do lewej */
+    margin-bottom: auto; /* Wypycha tytuł do góry */
+}
+
+/* Lista tekstowa (Języki) - wycentrowana w pionie dzięki flex w rodzicu */
+.text-list {
+    margin: auto 0; /* Centrowanie wertykalne wewnątrz kafelka */
+    list-style-type: disc;
+    padding-left: 20px;
+    font-size: 1.1rem;
+}
+
+/* --- IKONY (LOGIKA UKŁADU) --- */
+
+/* Domyślny kontener na ikony (dla OS i VCS) */
+.icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; /* Centrowanie poziome */
+    align-items: center;     /* Centrowanie pionowe */
+    margin: auto 0;          /* Centrowanie w pionie całego bloku w kafelku */
+    width: 100%;
+}
+
+/* Specjalny Grid 2x2 tylko dla Programowania */
+.programming-icons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dwie kolumny */
+    gap: 20px;
+    justify-items: center; /* Wyśrodkowanie ikon w ich komórkach */
+}
+
+/* Stylizacja zdjęć */
+.icons img {
+    height: 85px;       /* Zwiększone zdjęcie (C będzie większe) */
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+.icons img:hover {
+    transform: scale(1.15);
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+}
+
+
+/* Fix dla Dark Mode */
+body.dark-mode .icons img {
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+
+/* --- PROJEKTY --- */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    /* Usunąłem padding stąd, damy go niżej, żeby ikonka mogła być na całą szerokość jeśli zechcesz */
+    overflow: hidden; 
+    border: 2px solid rgba(0,0,0,0.05);
+}
+
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+}
+
+/* Nagłówek karty - ZMIANA PROPORCJI */
+.card-header {
+    background-color: var(--bg-color);
+    
+    /* ZMIANA 1: Zwiększamy wysokość z 140px na 250px. 
+       To pozwoli zdjęciu "oddychać" i być znacznie większym. */
+    height: 250px; 
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    overflow: hidden; /* Na wszelki wypadek */
+}
+
+
+.project-icon {
+    font-size: 3.5rem;
+    color: var(--accent-color);
+}
+
+.card-body {
+    /* ZMIANA 2: Zmniejszamy padding z 1.5rem na 1.2rem, 
+       żeby karta nie zrobiła się gigantycznie długa przez wysoki nagłówek. */
+    padding: 1.2rem; 
+    
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.card-body h3 {
+    margin-bottom: 10px;
+    color: var(--text-color);
+    font-size: 1.3rem;
+}
+
+.card-body p {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    margin-bottom: 15px;
+    opacity: 0.9;
+}
+
+/* Tagi technologiczne */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto; /* Dopycha tagi do dołu sekcji body */
+}
+
+.tags span {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+.card-footer {
+    padding: 1.5rem;
+    padding-top: 0;
+}
+
+body.dark-mode .project-card {
+    border: 2px solid rgba(255,255,255,0.05);
+}
+
+body.dark-mode .project-card:hover {
+    border-color: var(--accent-color);
+}
+
+body.dark-mode .tags span {
+    background-color: #2c2c2c;
+    border-color: #444;
+}
+
+
+.btn-small {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: var(--accent-color);
+    font-weight: 600;
+    border: 2px solid var(--accent-color);
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-align: center;
+    transition: all 0.3s ease;
+    align-self: flex-start;
+    font-size: 1rem;
+}
+
+.btn-small:hover {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+/* --- KONTAKT --- */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-form label { font-weight: 500; font-size: 1.1rem; }
+
+input, textarea, select {
+    width: 100%; 
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.btn-submit {
+    padding: 12px 25px;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.btn-submit:hover { opacity: 0.9; }
+
+/* --- STOPKA --- */
+footer {
+    text-align: center;
+    padding: 3rem;
+    background-color: var(--nav-bg);
+    margin-top: 4rem;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    font-size: 1rem;
+}
+
+.socials {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.socials a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* --- MOBILE --- */
+/* --- MOBILE (SIDE DRAWER / MENU BOCZNE) --- */
+/* --- MOBILE (SIDE DRAWER / MENU BOCZNE) --- */
+@media (max-width: 768px) {
+    .hamburger { display: block; }
+
+    /* Przycisk X */
+    .close-btn {
+        display: block;
+        position: absolute;
+        top: 15px; /* Troszkę wyżej */
+        right: 20px;
+        font-size: 2rem; /* Troszkę mniejszy X */
+        cursor: pointer;
+        color: var(--text-color);
+        line-height: 1;
+    }
+    
+    .close-btn:hover { color: var(--accent-color); }
+
+    /* Kontener Menu */
+    .nav-menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        
+        position: fixed;
+        top: 0;
+        right: -100%; /* Ukryte */
+        
+        /* ZMIANA 1: Sztywna, smukła szerokość zamiast % */
+        width: 250px; 
+        height: 100vh;
+        
+        background-color: var(--card-bg);
+        box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+        
+        padding-top: 70px;
+        transition: right 0.3s ease-in-out; /* Szybsza animacja (0.3s) */
+        z-index: 2000;
+        
+        margin-left: 0;
+    }
+
+    .nav-menu.active {
+        right: 0;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        gap: 25px; /* Nieco mniejsze odstępy */
+        margin-bottom: 30px;
+        margin-top: 20px;
+    }
+
+    .nav-links a {
+        font-size: 1.1rem; /* ZMIANA 2: Mniejsza czcionka, żeby pasowała do węższego paska */
+    }
+
+    .settings {
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        gap: 15px;
+    }
+
+    /* ZMIANA 3: Mniejsze przyciski ustawień TYLKO na telefonie */
+    #language-selector, 
+    #theme-toggle {
+        width: 45px;  /* Węższe */
+        height: 35px; /* Niższe */
+        font-size: 0.9rem; /* Mniejsza ikona/tekst */
+        padding: 2px;
+    }
+
+    /* Reszta responsywności */
+    .skills-grid { grid-template-columns: 1fr; }
+    .section { padding: 3rem 1.5rem; } 
+}
