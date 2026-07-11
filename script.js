@@ -168,20 +168,29 @@ themeToggle.addEventListener('click', () => {
 // --- OBSŁUGA MENU ---
 const hamburgerBtn = document.getElementById('hamburger-btn');
 const navMenu = document.getElementById('nav-menu');
+const closeBtn = document.getElementById('close-btn');
+const navLinks = document.querySelectorAll('.nav-link-item');
 
 // Otwieranie
 hamburgerBtn.addEventListener('click', () => {
-    navMenu.classList.add('active'); // Używamy add, bo toggle może mieszać przy animacjach
+    navMenu.classList.add('active');
 });
 
-// Zamykanie (Krzyżyk lub Link)
-function closeMenu() {
+// Zamykanie (Krzyżyk)
+closeBtn.addEventListener('click', () => {
     navMenu.classList.remove('active');
-}
+});
 
-// Opcjonalnie: Zamknij jak klikniesz poza menu (dla UX)
+// Zamykanie po kliknięciu w link
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+    });
+});
+
+// Zamykanie po kliknięciu poza menu
 document.addEventListener('click', (e) => {
     if (!navMenu.contains(e.target) && !hamburgerBtn.contains(e.target) && navMenu.classList.contains('active')) {
-        closeMenu();
+        navMenu.classList.remove('active');
     }
 });

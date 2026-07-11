@@ -6,6 +6,7 @@
     --accent-color: #0056b3;
     --nav-bg: #ffffff;
     --shadow: 0 4px 6px rgba(0,0,0,0.1);
+     --project-header-bg: #e5e5e5;
 }
 
 body.dark-mode {
@@ -15,6 +16,7 @@ body.dark-mode {
     --accent-color: #4da8da;
     --nav-bg: #1e1e1e;
     --shadow: 0 4px 6px rgba(0,0,0,0.5);
+    --project-header-bg: #151515; 
 }
 
 /* Reset */
@@ -243,17 +245,21 @@ body.dark-mode .icons img {
 
 /* Nagłówek karty - ZMIANA PROPORCJI */
 .card-header {
-    background-color: var(--bg-color);
-    
-    /* ZMIANA 1: Zwiększamy wysokość z 140px na 250px. 
-       To pozwoli zdjęciu "oddychać" i być znacznie większym. */
+    background-color: var(--project-header-bg); /* Użycie dynamicznej zmiennej */
     height: 250px; 
-    
     display: flex;
     justify-content: center;
     align-items: center;
     border-bottom: 1px solid rgba(0,0,0,0.05);
-    overflow: hidden; /* Na wszelki wypadek */
+    overflow: hidden;
+    padding: 0; /* Zastępuje inline style="padding: 0;" */
+}
+
+
+.project-img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: contain;
 }
 
 
@@ -394,11 +400,24 @@ footer {
 }
 
 .socials a {
+    display: flex;       /* Flexbox wyrównuje ikonę i tekst */
+    align-items: center; /* Centruje elementy w pionie */
+    gap: 8px;            /* Odstęp między ikoną a napisem */
     color: var(--accent-color);
     text-decoration: none;
     font-weight: 600;
 }
 
+.socials a svg,
+.nav-links a svg {
+    width: 1.5em;
+    height: 1.5em;
+    transition: transform 0.3s ease;
+}
+
+.socials a:hover svg {
+    transform: scale(1.1);
+}
 /* --- MOBILE --- */
 /* --- MOBILE (SIDE DRAWER / MENU BOCZNE) --- */
 /* --- MOBILE (SIDE DRAWER / MENU BOCZNE) --- */
