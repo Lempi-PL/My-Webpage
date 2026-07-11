@@ -194,3 +194,26 @@ document.addEventListener('click', (e) => {
         navMenu.classList.remove('active');
     }
 });
+
+// --- OBSŁUGA PŁYWAJĄCYCH SOCIAL MEDIÓW (Intersection Observer) ---
+const mainFooter = document.querySelector('footer');
+const floatingSocials = document.getElementById('floating-socials');
+
+if (mainFooter && floatingSocials) {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Gdy duża stopka wjeżdża na ekran -> ukrywamy mały pasek
+                floatingSocials.classList.add('hidden');
+            } else {
+                // Gdy duża stopka znika z ekranu (scroll do góry) -> pokazujemy mały pasek
+                floatingSocials.classList.remove('hidden');
+            }
+        });
+    }, {
+        root: null,
+        threshold: 0.1 // Wystarczy, że 10% dużej stopki się pokaże, by ukryć pasek
+    });
+
+    observer.observe(mainFooter);
+}

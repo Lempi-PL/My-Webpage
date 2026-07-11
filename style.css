@@ -383,6 +383,67 @@ input, textarea, select {
 .btn-submit:hover { opacity: 0.9; }
 
 /* --- STOPKA --- */
+/* --- PŁYWAJĄCE SOCIAL MEDIA --- */
+.floating-socials {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--card-bg);
+    padding: 10px 20px;
+    border-radius: 30px;
+    box-shadow: var(--shadow);
+    display: flex;
+    gap: 20px;
+    z-index: 999;
+    border: 1px solid rgba(0,0,0,0.05);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+body.dark-mode .floating-socials {
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.floating-socials a {
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.floating-socials a svg {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.floating-socials a:hover {
+    color: var(--accent-color);
+    transform: translateY(-3px);
+}
+
+/* Klasa ukrywająca pływający pasek, gdy dojedziemy do dużej stopki */
+.floating-socials.hidden {
+    opacity: 0;
+    pointer-events: none; /* Zapobiega klikaniu w ukryty element */
+    transform: translateY(20px);
+}
+
+/* Wyśrodkowanie na telefonach (wygląda jak dock w iOS) */
+@media (max-width: 768px) {
+    .floating-socials {
+        right: 50%;
+        transform: translateX(50%);
+        bottom: 15px;
+        padding: 10px 25px;
+    }
+    
+    /* Modyfikacja animacji ukrywania dla wyśrodkowanego elementu */
+    .floating-socials.hidden {
+        transform: translate(50%, 20px);
+    }
+}
+
+
 footer {
     text-align: center;
     padding: 3rem;
