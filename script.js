@@ -7,7 +7,9 @@ const translations = {
         nav_projects: "Projects",
         nav_contact: "Contact",
         about_title: "About me",
-        about_text: "I am a second-year Computer Science student with a background as an Electronics Technician. Unlike many peers who focus on high-level web development, I am passionate about what happens 'under the hood.' My focus is on C, C++, and Operating Systems because they offer total control over hardware and performance. I approach programming with an analytical mindset. Currently, I am deepening my knowledge of Linux environments and network protocols to combine low-level programming with cybersecurity.",
+        
+        about_text: `I am a Computer Science student with a background as an Electronics Technician. My professional focus is built on three core pillars: Operating Systems, Cybersecurity, and Systems Programming. I am passionate about what happens "under the hood," analyzing the critical intersection where hardware, system internals, and security meet.\n\nI approach engineering with an analytical mindset. Rather than just writing software, I dive deep into OS architecture, memory management, and network protocols to understand how multi-layered environments can be exploited and hardened. I analyze complex system behaviors to mitigate low-level attack vectors effectively.\n\nTo turn this knowledge into action, I leverage C, C++, and Python as my primary tools. I actively combine my understanding of OS internals and cybersecurity to engineer custom security tooling—ranging from asynchronous DAST scanners to highly concurrent, exploit-resilient system utilities. My ultimate goal is to architect robust, high-performance systems that actively defend against modern threats.`,
+
         skills_title: "My Skills",
         cat_programming: "Programming",
         cat_os: "Operating Systems",
@@ -48,8 +50,9 @@ const translations = {
         nav_projects: "Projekty",
         nav_contact: "Kontakt",
         about_title: "O mnie",
-        about_text: "Jestem studentem drugiego roku informatyki z tytułem Technika Elektronika. W przeciwieństwie do wielu rówieśników skupiających się na tworzeniu stron www, mnie pasjonuje to, co dzieje się „pod maską”. Specjalizuję się w C, C++ i systemach operacyjnych, ponieważ dają pełną kontrolę nad sprzętem i wydajnością. Do programowania podchodzę analitycznie. Obecnie zgłębiam środowiska Linux i protokoły sieciowe, aby w przyszłości połączyć programowanie niskopoziomowe z cyberbezpieczeństwem.",
-        skills_title: "Umiejętności",
+        
+        about_text: `Jestem studentem informatyki oraz dyplomowanym technikiem elektronikiem. Mój profil zawodowy opiera się na trzech głównych filarach: systemach operacyjnych, cyberbezpieczeństwie oraz programowaniu systemowym. Pasjonuje mnie to, co dzieje się „pod maską” – w krytycznym punkcie styku sprzętu, mechanizmów systemowych i bezpieczeństwa.\n\nDo inżynierii podchodzę z analitycznym nastawieniem. Zamiast po prostu pisać kod, zagłębiam się w architekturę systemów operacyjnych, zarządzanie pamięcią i protokoły sieciowe, aby zrozumieć, jak wielowarstwowe środowiska mogą być atakowane i utwardzane. Analizuję złożone zachowania systemów, co pozwala mi skutecznie mitygować niskopoziomowe wektory ataków.\n\nAby przekuć tę wiedzę w praktykę, wykorzystuję języki C, C++ oraz Python jako moje główne narzędzia. Aktywnie łączę wiedzę z zakresu OS i cyberbezpieczeństwa z programowaniem, tworząc autorskie narzędzia security – od asynchronicznych skanerów DAST po wysoce współbieżne, odporne na exploity aplikacje systemowe. Moim ostatecznym celem jest projektowanie solidnych, wysokowydajnych systemów, które aktywnie chronią przed współczesnymi zagrożeniami.`,
+        
         cat_programming: "Programowanie",
         cat_os: "Systemy Operacyjne",
         cat_vcs: "Kontrola Wersji",
@@ -89,8 +92,9 @@ const translations = {
         nav_projects: "Projekte",
         nav_contact: "Kontakt",
         about_title: "Über mich",
-        about_text: "Ich bin Informatikstudent im zweiten Jahr und habe auch Erfahrung als Elektroniker. Anders als viele andere interessiere ich mich nicht für Webentwicklung, sondern für die Technik im Hintergrund. Ich konzentriere mich auf C, C++ und Betriebssysteme, weil ich dort die Hardware direkt kontrollieren kann. Ich arbeite gerne logisch und analytisch. Zurzeit lerne ich mehr über Linux und Netzwerke. Mein Ziel ist es, Systemprogrammierung mit Cybersicherheit zu verbinden.",
-        skills_title: "Fähigkeiten",
+        
+        about_text: `Ich bin Informatikstudent und habe eine Ausbildung als Elektroniker. Mein beruflicher Fokus baut auf drei Säulen auf: Betriebssysteme, Cybersicherheit und systemnahe Programmierung. Meine Leidenschaft liegt „unter der Haube“, genau dort, wo Hardware, Systemarchitektur und Sicherheit aufeinandertreffen.\n\nIch arbeite sehr analytisch. Anstatt nur Code zu schreiben, analysiere ich Betriebssysteme, Speicherverwaltung und Netzwerkprotokolle im Detail. Ich möchte genau verstehen, wie komplexe IT-Umgebungen angegriffen und geschützt werden können. So kann ich Schwachstellen auf Systemebene erkennen und effektiv abwehren.\n\nUm dieses Wissen in die Praxis umzusetzen, nutze ich C, C++ und Python als meine wichtigsten Werkzeuge. Ich verbinde mein Wissen über Betriebssysteme und IT-Sicherheit mit der Programmierung, um eigene Sicherheitstools zu entwickeln. Dazu gehören asynchrone DAST-Scanner und sichere, leistungsstarke Systemprogramme. Mein Ziel ist es, robuste Software zu entwickeln, die Systeme aktiv vor modernen Bedrohungen schützt.`,
+
         cat_programming: "Programmierung",
         cat_os: "Betriebssysteme",
         cat_vcs: "Versionskontrolle",
