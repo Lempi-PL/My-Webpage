@@ -53,6 +53,7 @@ const translations = {
         
         about_text: `Jestem studentem informatyki oraz dyplomowanym technikiem elektronikiem. Mój profil zawodowy opiera się na trzech głównych filarach: systemach operacyjnych, cyberbezpieczeństwie oraz programowaniu systemowym. Pasjonuje mnie to, co dzieje się „pod maską” – w krytycznym punkcie styku sprzętu, mechanizmów systemowych i bezpieczeństwa.\n\nDo inżynierii podchodzę z analitycznym nastawieniem. Zamiast po prostu pisać kod, zagłębiam się w architekturę systemów operacyjnych, zarządzanie pamięcią i protokoły sieciowe, aby zrozumieć, jak wielowarstwowe środowiska mogą być atakowane i utwardzane. Analizuję złożone zachowania systemów, co pozwala mi skutecznie mitygować niskopoziomowe wektory ataków.\n\nAby przekuć tę wiedzę w praktykę, wykorzystuję języki C, C++ oraz Python jako moje główne narzędzia. Aktywnie łączę wiedzę z zakresu OS i cyberbezpieczeństwa z programowaniem, tworząc autorskie narzędzia security – od asynchronicznych skanerów DAST po wysoce współbieżne, odporne na exploity aplikacje systemowe. Moim ostatecznym celem jest projektowanie solidnych, wysokowydajnych systemów, które aktywnie chronią przed współczesnymi zagrożeniami.`,
         
+        skills_title: "Moje Umiejętności",
         cat_programming: "Programowanie",
         cat_os: "Systemy Operacyjne",
         cat_vcs: "Kontrola Wersji",
@@ -95,6 +96,7 @@ const translations = {
         
         about_text: `Ich bin Informatikstudent und habe eine Ausbildung als Elektroniker. Mein beruflicher Fokus baut auf drei Säulen auf: Betriebssysteme, Cybersicherheit und systemnahe Programmierung. Meine Leidenschaft liegt „unter der Haube“, genau dort, wo Hardware, Systemarchitektur und Sicherheit aufeinandertreffen.\n\nIch arbeite sehr analytisch. Anstatt nur Code zu schreiben, analysiere ich Betriebssysteme, Speicherverwaltung und Netzwerkprotokolle im Detail. Ich möchte genau verstehen, wie komplexe IT-Umgebungen angegriffen und geschützt werden können. So kann ich Schwachstellen auf Systemebene erkennen und effektiv abwehren.\n\nUm dieses Wissen in die Praxis umzusetzen, nutze ich C, C++ und Python als meine wichtigsten Werkzeuge. Ich verbinde mein Wissen über Betriebssysteme und IT-Sicherheit mit der Programmierung, um eigene Sicherheitstools zu entwickeln. Dazu gehören asynchrone DAST-Scanner und sichere, leistungsstarke Systemprogramme. Mein Ziel ist es, robuste Software zu entwickeln, die Systeme aktiv vor modernen Bedrohungen schützt.`,
 
+        skills_title: "Meine Fähigkeiten",
         cat_programming: "Programmierung",
         cat_os: "Betriebssysteme",
         cat_vcs: "Versionskontrolle",
