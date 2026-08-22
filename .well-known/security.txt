@@ -1,4 +1,5 @@
 Contact: mailto:lempart.dawid.it@gmail.com
-Expires: 2027-12-31T23:59:59.000Z
-Preferred-Languages: en, pl
+Expires: 2027-08-22T23:59:00Z
+Encryption: https://dawid-lempart-it.dev/pgp-key.txt
 Canonical: https://dawid-lempart-it.dev/.well-known/security.txt
+Preferred-Languages: en, de, pl
