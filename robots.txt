@@ -30,4 +30,6 @@ User-agent: *
 Content-Signal: search=yes,ai-input=no,ai-train=no,use=reference
 Allow: /
 
+Sitemap: https://dawid-lempart-it.dev/sitemap.xml
+
 # END Cloudflare Managed Content
